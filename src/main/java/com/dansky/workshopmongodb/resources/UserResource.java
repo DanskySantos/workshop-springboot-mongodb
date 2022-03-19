@@ -1,5 +1,6 @@
 package com.dansky.workshopmongodb.resources;
 
+import com.dansky.workshopmongodb.domain.Post;
 import com.dansky.workshopmongodb.domain.User;
 import com.dansky.workshopmongodb.dto.UserDTO;
 import com.dansky.workshopmongodb.services.UserService;
@@ -41,6 +42,12 @@ public class UserResource {
         return ResponseEntity.ok().body(new UserDTO(user));
     }
 
+    @GetMapping(value = "{id}/posts")
+    public ResponseEntity<List<Post>> findPosts(@PathVariable String id) {
+        User user = service.findById(id);
+        return ResponseEntity.ok().body(user.getPosts());
+    }
+
     @PostMapping
     public ResponseEntity<Void> insert(@RequestBody UserDTO userDTO) {
         User user = service.fromDTO(userDTO);
@@ -62,4 +69,6 @@ public class UserResource {
         user = service.update(user);
         return ResponseEntity.noContent().build();
     }
+
+
 }
