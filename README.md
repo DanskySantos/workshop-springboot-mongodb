@@ -27,7 +27,7 @@ Envie para o branch develop: git push origin <nome_do_projeto> / <local>.
 Crie a solicitação de pull.
 Como alternativa, consulte a documentação do GitHub em como criar uma solicitação pull.
 
-🤝 Colaboradores
+# 🤝 Colaboradores
 Agradecemos às seguintes pessoas que contribuíram para este projeto:
 
 Dansky Mendes dos Santos.
